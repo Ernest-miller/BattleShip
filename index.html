@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+                html, body {
+            box-sizing: border-box;
+        }
+        body * {
+            box-sizing: inherit;
+        }
+        :root {
+            --perRow: 3;
+        }
+        body {background: darkred;}
+        h1 {
+            color: darkgoldenrod;
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 50px;
+        }
+        #gameboard {
+            display: flex;
+            flex-wrap: wrap;
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            background: darkblue;
+        }
+        .tile {
+            width: calc(100%/var(--perRow));
+            height: calc(100%/var(--perRow));
+            border: 2px solid darkgoldenrod;
+        }
+        .wrapper:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .col {
+            width: 50%;
+            float: left;
+        }
+        .shot {background: cornflowerblue;}
+        .battleship:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url('./battleship.png') no-repeat;
+            background-size: 75%;
+            background-position: center center;
+        }
+        #message {color: darkgoldenrod;
+            height: 600px;
+            overflow-y: scroll;
+        }
+    </style>
+    <title>Battle Ship</title>
+</head>
+<body>
+    <h1>Battle Ship</h1>
+    <div class="wrapper">
+        <div class="col">
+            <div id="gameboard"></div>
+        </div>
+        <div class="col">
+            <div id="message"></div>
+        </div>
+    </div>
+    <!-- smack talk -->
+    <!-- <script src="app2.js"></script> -->
+    <!-- normal game -->
+    <script src="app.js"></script>
+</body>
+</html>
